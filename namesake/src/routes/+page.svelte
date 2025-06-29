@@ -1,3 +1,6 @@
-<h1>Website Starter</h1>
-<p>This is the homepage</p>
-<a href='./portfolio'>portfolio</a>
+<script>
+	import Navbar from "./navbar.svelte";
+</script>
+<Navbar />
+<h1>Iyan</h1>
+<h1>Syeed-Miller</h1>
