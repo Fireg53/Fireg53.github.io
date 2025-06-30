@@ -1,6 +1,1 @@
-<script>
-	import Navbar from "../navbar.svelte";
-
-</script>
-<Navbar />
 <h1>portfolio</h1>
