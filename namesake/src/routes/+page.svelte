@@ -18,7 +18,6 @@
 	<button onclick={openInNewTab("mailto:iyansyeedmiller@gmail.com")}><i class="fas fa-envelope"></i> <span>@iyansyeedmiller@gmail.com</span></button>
 </div>
 <div class="resume">
-	<p>Resume</p> <p>Download</p><i class="fab fa-youtube"></i>
 	<iframe
 	src="Resume.pdf#toolbar=0"
 	width= 100%
@@ -51,6 +50,7 @@
 	}
 	.resume{
 		display: flex;
+		direction: column;
 		justify-content: center;
 		align-items: center;
 		padding: 20px;
