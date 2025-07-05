@@ -12,10 +12,10 @@
 </header>
 <br>
 <div class="links">
-	<button onclick={openInNewTab("https://github.com/Fireg53")}><i class="fab fa-github"></i><span>@Fireg53</span></button>
-	<button onclick={openInNewTab("https://www.youtube.com/@fireg5355")}><i class="fab fa-youtube"></i> <span>@fireg5355</span></button>
-	<button onclick={openInNewTab("https://www.instagram.com/iyan.in3d/")}><i class="fab fa-square-instagram"></i> <span>@iyan.in3d</span></button>
-	<button onclick={openInNewTab("mailto:iyansyeedmiller@gmail.com")}><i class="fas fa-envelope"></i> <span>@iyansyeedmiller@gmail.com</span></button>
+	<button onclick={openInNewTab("https://github.com/Fireg53")} class="gradient"><i class="fab fa-github"></i><span>Fireg53</span></button>
+	<button onclick={openInNewTab("https://www.youtube.com/@fireg5355")} class="gradient"><i class="fab fa-youtube"></i> <span>Fireg5355</span></button>
+	<button onclick={openInNewTab("https://www.instagram.com/iyan.in3d/")} class="gradient"><i class="fab fa-instagram"></i>Iyan.in3d</button>
+	<button onclick={openInNewTab("mailto:iyansyeedmiller@gmail.com")} class="gradient"><i class="fas fa-envelope"></i> <span>Iyansyeedmiller@gmail.com</span></button>
 </div>
 <div class="resume">
 	<iframe
@@ -61,5 +61,34 @@
 		height: 70vw;
 		border-radius: 20px;
 		margin-left: 5%;
+	}
+	.gradient {
+	align-items: center;
+	background-image: linear-gradient(144deg,#E6BCCD, #D295BF 20%, #7E52A0);
+	border: 0;
+	border-radius: 8px;
+	box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+	box-sizing: border-box;
+	color: #FFFFFF;
+	display: flex;
+	font-family: Phantomsans, sans-serif;
+	font-size: 1em;
+	justify-content: center;
+	column-gap: 0.5em;
+	max-width: 30%;
+	min-width: 2em;
+	padding: 8px 12px; 
+	text-decoration: none;
+	user-select: none;
+	touch-action: manipulation;
+	white-space: nowrap;
+	cursor: pointer;
+	box-shadow:  -.125rem -.125rem 0.5rem #E6BCCD, .125rem .125rem 0.5rem #c085ee;
+
+	}
+
+	.gradient:active,
+	.gradient:not([disabled]):hover {
+		/***/
 	}
 </style>

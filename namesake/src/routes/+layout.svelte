@@ -44,6 +44,13 @@
     text-align: right;
     align-content: center;
     width: 3rem;
+    box-shadow: 1px 1px 4px #868686;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+ }
+ .bar::hov{
+   top: 10px;
  }
 
  .short{
@@ -77,4 +84,5 @@
     margin: 0;
     font-size:xx-large;
  }
+ 
 </style>
