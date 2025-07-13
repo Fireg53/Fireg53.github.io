@@ -18,13 +18,7 @@
 	<button onclick={openInNewTab("mailto:iyansyeedmiller@gmail.com")} class="gradient"><i class="fas fa-envelope"></i> <span>Iyansyeedmiller@gmail.com</span></button>
 </div>
 <div class="resume">
-	<iframe
-	src="Resume.pdf#toolbar=0"
-	width= 100%
-	height= 100%
-	style="border:none"
-	title="Non-downloadable PDF Viewer"
-	></iframe>
+	<img src="Resume.png" alt='Resume' style='width:100%; height:100%; border-radius:6px;'>
 </div>
 
 <style>
@@ -83,12 +77,10 @@
 	touch-action: manipulation;
 	white-space: nowrap;
 	cursor: pointer;
-	box-shadow:  -.125rem -.125rem 0.5rem #E6BCCD, .125rem .125rem 0.5rem #c085ee;
-
 	}
 
 	.gradient:active,
 	.gradient:not([disabled]):hover {
-		/***/
+		box-shadow:  -.125rem -.125rem 0.5rem #E6BCCD, .125rem .125rem 0.5rem #c085ee;
 	}
 </style>

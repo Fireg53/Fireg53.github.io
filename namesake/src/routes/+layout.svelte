@@ -49,8 +49,9 @@
     top: 0;
     transition: top ease 0.5s;
  }
- .bar::hov{
+ .bar:not([disabled]):hover{
    top: 10px;
+   /**FIX THIS*/
  }
 
  .short{
