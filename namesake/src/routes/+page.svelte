@@ -18,6 +18,7 @@
 	<button onclick={openInNewTab("mailto:iyansyeedmiller@gmail.com")} class="gradient"><i class="fas fa-envelope"></i> <span>Iyansyeedmiller@gmail.com</span></button>
 </div>
 <div class="resume">
+	<span class='label'><p>Resume</p><button class='download'><i class="fas fa-download"></i></button></span>
 	<img src="Resume.png" alt='Resume' style='width:100%; height:100%; border-radius:6px;'>
 </div>
 
@@ -44,9 +45,7 @@
 	}
 	.resume{
 		display: flex;
-		direction: column;
-		justify-content: center;
-		align-items: center;
+		flex-direction: column;
 		padding: 20px;
 		margin-top: 5rem;
 		margin-right:40%;
@@ -55,6 +54,27 @@
 		height: 70vw;
 		border-radius: 20px;
 		margin-left: 5%;
+	}
+	.label{
+		padding-left: 2vw;
+		padding-right: 2vw;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		color: white;
+		font-family: "Fugaz One", sans-serif;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 1.5vw;
+		line-height: 0.2vw;
+
+	}
+	.download {
+		background-color:#E6BCCD;
+		border: 0;
+		color: white;
+		cursor: pointer;
 	}
 	.gradient {
 	align-items: center;
