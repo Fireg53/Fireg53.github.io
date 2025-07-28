@@ -3,26 +3,32 @@
 		window.open(url, '_blank').focus();
 	}
 </script>
-
-<br>
-<br>
-<header>
-	<h1>Iyan</h1>
-	<h1>Syeed-Miller</h1>
-</header>
-<br>
-<div class="links">
-	<button onclick={openInNewTab("https://github.com/Fireg53")} class="gradient"><i class="fab fa-github"></i><span>Fireg53</span></button>
-	<button onclick={openInNewTab("https://www.youtube.com/@fireg5355")} class="gradient"><i class="fab fa-youtube"></i> <span>Fireg5355</span></button>
-	<button onclick={openInNewTab("https://www.instagram.com/iyan.in3d/")} class="gradient"><i class="fab fa-instagram"></i>Iyan.in3d</button>
-	<button onclick={openInNewTab("mailto:iyansyeedmiller@gmail.com")} class="gradient"><i class="fas fa-envelope"></i> <span>Iyansyeedmiller@gmail.com</span></button>
-</div>
-<div class="resume">
-	<span class='label'><p>Resume</p><button class='download'><i class="fas fa-download"></i></button></span>
-	<img src="Resume.png" alt='Resume' style='width:100%; height:100%; border-radius:6px;'>
+<div class='page'>
+	<br>
+	<br>
+	<header>
+		<h1>Iyan</h1>
+		<h1>Syeed-Miller</h1>
+	</header>
+	<br>
+	<div class="links">
+		<button onclick={openInNewTab("https://github.com/Fireg53")} class="gradient"><i class="fab fa-github"></i><span>Fireg53</span></button>
+		<button onclick={openInNewTab("https://www.youtube.com/@fireg5355")} class="gradient"><i class="fab fa-youtube"></i> <span>Fireg5355</span></button>
+		<button onclick={openInNewTab("https://www.instagram.com/iyan.in3d/")} class="gradient"><i class="fab fa-instagram"></i>Iyan.in3d</button>
+		<button onclick={openInNewTab("mailto:iyansyeedmiller@gmail.com")} class="gradient"><i class="fas fa-envelope"></i> <span>Iyansyeedmiller@gmail.com</span></button>
+	</div>
+	<div class="resume_container">
+		<div class="resume">
+			<span class='label'><p>Resume</p><button class='download'><i class="fas fa-download"></i></button></span>
+			<img src="Resume.png" alt='Resume' style='width:100%; height:100%; border-radius:6px;'>
+		</div>
+	</div>
 </div>
 
 <style>
+	.page{
+		padding: 20px;
+	}
 	h1{
 		font-family: "Climate Crisis", sans-serif;
 		font-optical-sizing: auto;
@@ -43,17 +49,19 @@
 		color: #29274C;
 		margin-left: 5%;
 	}
+	.resume_container{
+		display: flex;
+		justify-content: center;
+	}
 	.resume{
 		display: flex;
 		flex-direction: column;
 		padding: 20px;
 		margin-top: 5rem;
-		margin-right:40%;
 		background-image: linear-gradient( #E6BCCD, #D295BF, #7E52A0);
 		width: 55vw;
 		height: 70vw;
 		border-radius: 20px;
-		margin-left: 5%;
 	}
 	.label{
 		padding-left: 2vw;
@@ -97,6 +105,7 @@
 	touch-action: manipulation;
 	white-space: nowrap;
 	cursor: pointer;
+	transition: box-shadow ease 0.5s;
 	}
 
 	.gradient:active,

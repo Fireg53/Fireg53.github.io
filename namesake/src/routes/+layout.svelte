@@ -1,27 +1,58 @@
 <script>
+   import { onNavigate } from "$app/navigation";
+   import { page } from '$app/stores';
+   import { derived } from 'svelte/store';
+
+  // Optional: make a derived store if you only need the pathname
+  const currentPath = derived(page, $page => $page.url.pathname);
+
 	let { children } = $props();
+
+   onNavigate((navigation) => {
+      if (!document.startViewTransition) return;
+
+      return new Promise((resolve) => {
+         document.startViewTransition(async () => {
+            resolve();
+            await navigation.complete;
+         });
+      });
+   });
 </script>
 
 <nav>
-    <div class='bar short'>
-      <a href="/">Home</a>
-    </div>
-    <div class='bar med'>
-      <a href="/portfolio">Portfolio</a>
-    </div>
-    <div class='bar long'>
-      <a href="/games">Games</a>
-    </div>
+   <div class='bar short'>
+      {#if currentPath === '/'}
+         <span class="active">Home</span>
+      {:else}
+         <a href="/">Home</a>
+      {/if}
+   </div>
+
+   <div class='bar med'>
+      {#if currentPath === '/portfolio'}
+         <span class="active">Portfolio</span>
+      {:else}
+         <a href="/portfolio">Portfolio</a>
+      {/if}
+   </div>
+
+   <div class='bar long'>
+      {#if currentPath === '/games'}
+         <span class="active">Games</span>
+      {:else}
+         <a href="/games">Games</a>
+      {/if}
+   </div>
 </nav>
 
-<div style="padding:20px">
+<div>
     {@render children()}
 </div>
 
 <style>
+
  nav{
-    /*border-style: dashed;
-    border-color: red;*/
     position: absolute;
     left: 73%;
     font-family: "Fugaz One", sans-serif;
@@ -37,6 +68,7 @@
     margin-right: 1.2rem;
     margin-left: 1.2rem;
     margin-bottom: 1.2rem;
+    view-transition-name: header;
  }
 
  .bar{
@@ -44,28 +76,38 @@
     text-align: right;
     align-content: center;
     width: 3rem;
-    box-shadow: 1px 1px 4px #868686;
     position: relative;
     top: 0;
-    transition: top ease 0.5s;
- }
- .bar:not([disabled]):hover{
-   top: 10px;
-   /**FIX THIS*/
  }
 
  .short{
     background-color: #E6BCCD;
+    box-shadow: 1px 1px 4px #c787a1;
     height: 10rem;
+    transition: height ease 0.5s;
+ }
+ .short:not([disabled]):hover{
+    height: 10.4rem;
  }
 
  .med{
     background-color: #D295BF;
+    box-shadow: 1px 1px 4px rgb(148, 86, 110);
     height: 17rem;
+    transition: height ease 0.5s;
  }
+ .med:not([disabled]):hover{
+    height: 17.4rem;
+ }
+
  .long{
     background-color: #7E52A0;
+    box-shadow: 1px 1px 4px #2e1542;
     height: 24rem;
+    transition: height ease 0.5s;
+ }
+ .long:not([disabled]):hover{
+    height: 24.4rem;
  }
 
  hr{
@@ -86,4 +128,49 @@
     font-size:xx-large;
  }
  
+/*Page Transitions*/
+
+ @keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+}
+
+@keyframes fade-out {
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes slide-from-top {
+	from {
+		transform: translateY(-100vh);
+	}
+}
+
+@keyframes slide-to-bottom {
+	to {
+		transform: translateY(-30px);
+	}
+}
+
+@keyframes spin {
+   from {
+      transform: rotate(20deg);
+   }
+}
+
+
+:root::view-transition-old(root) {
+  z-index: 1; /* Behind the new page */
+  animation: 3000ms;
+}
+
+:root::view-transition-new(root) {
+   z-index: 2;
+	animation:
+      1000ms cubic-bezier(0.4, 0, 0.2, 1) both spin,
+		210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+		1000ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-top;
+}
 </style>
